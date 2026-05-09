@@ -8,6 +8,7 @@ struct Vectores{
     int capacidad_max;
     int tamaño;
     float overhead; //porcentaje de celdas adicionales 
+    int inicio_pos[256]; //guarda la pos donde comienzan cada una de las letras distintas
 };
 
 void insercion(Vectores &v, const char* nuevaPalabra){
@@ -26,6 +27,15 @@ void insercion(Vectores &v, const char* nuevaPalabra){
         v.capacidad_max = nueva_cap;
     }
 
+    //insertar en el orden correcto 
+    int posicion = 0;
+    while (posicion< v.tamaño ){
+        posicion++;
+    }
+    for (int i = v.tamaño; i > posicion; i--) {
+        v.vec[i] = v.vec[i - 1];
+    }
+    
 }
 
 int main(){
