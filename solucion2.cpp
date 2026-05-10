@@ -59,6 +59,7 @@ Nodo *buscar(nivel &mi_grilla, const uchar* palabra_a_buscar) {
         }
     }
     
+
     return nullptr; 
 }
 
